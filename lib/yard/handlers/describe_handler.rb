@@ -1,6 +1,7 @@
 
 class RSpecDescribeHandler < YARD::Handlers::Ruby::Base
   handles method_call(:describe)
+  handles method_call(:context)
   
   def process
     objname = statement.parameters.first.jump(:string_content).source
