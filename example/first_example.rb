@@ -13,17 +13,22 @@ describe String do
     it "should be a pig!" do
       "hello".pig_latin.should == "ellohay"
      end
-
+  
     it "should fail to be a pig!" do
       "hello".pig_latin.should == "hello"
     end
   end
+  
+  context '#pig_latin' do
+    it "should be a pig (within a context)" do
+      "hello".pig_latin.should == "ellohay"
+    end
+  end
+  
 end
 
 describe String do
-  context '#pig_latin' do
-    it "should be a pig (again)" do
-      "hello".pig_latin.should == "ellohay"
-    end
+  it "should be empty" do
+    subject.should eq("") 
   end
 end
