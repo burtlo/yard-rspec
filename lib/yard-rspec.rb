@@ -1,13 +1,16 @@
 require 'rspec'
 
-
 module RSpecInTheYARD
   VERSION = '0.0.1' unless defined?(RSpecInTheYARD::VERSION)
 end
 
+
+require File.dirname(__FILE__) + "/yard/code_objects/rspec/context"
+require File.dirname(__FILE__) + "/yard/code_objects/rspec/specification"
+
 if RUBY19
-  require File.dirname(__FILE__) + "/yard/handlers/describe_handler"
-  require File.dirname(__FILE__) + "/yard/handlers/it_handler"
+  require File.dirname(__FILE__) + "/yard/handlers/context_handler"
+  require File.dirname(__FILE__) + "/yard/handlers/specification_handler"
 end
 
 require File.dirname(__FILE__) + "/yard/handlers/legacy/describe_handler"
