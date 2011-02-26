@@ -6,8 +6,11 @@
      <% log.info "Displaying the Context Info #{options}" %>
      <% old_object = options[:object] 
      options[:object] = context
+     
+     
      %>
      <% T('context') %>
+     <% options[:object] = old_object %>
    <% end %>
 </div>
 </div>
