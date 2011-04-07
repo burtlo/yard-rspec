@@ -5,6 +5,7 @@ module RSpecInTheYARD
 end
 
 
+require File.dirname(__FILE__) + "/yard/code_objects/rspec/rspec"
 require File.dirname(__FILE__) + "/yard/code_objects/rspec/context"
 require File.dirname(__FILE__) + "/yard/code_objects/rspec/specification"
 
