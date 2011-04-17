@@ -11,12 +11,12 @@ def init
   # Generate pages for each of the specs, with the 'spec' template and then
   # generate the page which is the full list of specs
   #
-  # @specs = Registry.all(:specs)
+  @specs = Registry.all(:specs)
   # 
-  # if @specs
-  #   @specs.each {|spec| serialize(spec) }
-  #   generate_full_list @specs.sort {|x,y| x.value.to_s <=> y.value.to_s }, :spec
-  # end
+  if @specs
+    @specs.each {|spec| serialize(spec) }
+    generate_full_list @specs.sort {|x,y| x.value.to_s <=> y.value.to_s }, :spec
+  end
   
 end
 
@@ -25,11 +25,11 @@ end
 # Generate a full_list page of the specified objects with the specified type.
 #
 def generate_full_list(objects,list_type,friendly_name=nil)
-    @items = objects
-    @list_type = "#{list_type}s"
-    @list_title = "#{friendly_name || list_type.to_s.capitalize} List"
-    @list_class = "class"
-    asset("#{list_type}_list.html",erb(:full_list))
+  @items = objects
+  @list_type = "#{list_type}s"
+  @list_title = "#{friendly_name || list_type.to_s.capitalize} List"
+  @list_class = "class"
+  asset("#{list_type}_list.html",erb(:full_list))
 end
 
 #
