@@ -28,5 +28,5 @@ end
 
 def search_fields
   fields = super rescue yard_default_search_fields
-  [ { :type => 'spec', :title > 'Specs', :search_title => 'Specs' } ] + fields
+  [ { :type => 'spec', :title => 'Specs', :search_title => 'Specs' } ] + fields
 end
