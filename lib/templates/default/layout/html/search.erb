@@ -1,5 +1,5 @@
 <div id="search">
-  <% search_fields.each do |id,name| %>
-  <a id="<%= id %>" href="#"><%= name %></a>
+  <% search_fields.each do |field| %>
+  <a id="<%= field[:type] %>_list_link" href="#"><%= field[:search_title] %></a>
   <% end %>
 </div>
