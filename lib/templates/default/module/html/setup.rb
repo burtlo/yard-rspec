@@ -4,13 +4,13 @@ def init
 end
 
 def specs
-  log.debug "Generating Specs"
+  #log.debug "Generating Specs"
   erb(:specs)
 end
 
 def contexts
-  log.debug "Finding Contexts"
+  #log.debug "Finding Contexts"
   @contexts ||= object.children.find_all {|child| child.is_a?(YARD::CodeObjects::RSpec::Context)}
-  log.debug "Contexts: #{@contexts}"
+  #log.debug "Contexts: #{@contexts}"
   @contexts
 end

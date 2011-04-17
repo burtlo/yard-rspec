@@ -1,0 +1,13 @@
+<% @contexts.each do |context| %>
+  <div>
+    <div><%= context.value %></div>
+    <div>
+      <% if context.children && !context.children.empty? %>
+        <% context.children.each do |child| %>
+          <%= child.value %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>

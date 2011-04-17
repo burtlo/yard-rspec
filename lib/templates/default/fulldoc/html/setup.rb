@@ -11,11 +11,12 @@ def init
   # Generate pages for each of the specs, with the 'spec' template and then
   # generate the page which is the full list of specs
   #
-  @specs = Registry.all(:specs)
+  #@contexts = Registry.all(:context)
+  @contexts = YARD::CodeObjects::RSpec::RSPEC_NAMESPACE.children
   # 
-  if @specs
-    @specs.each {|spec| serialize(spec) }
-    generate_full_list @specs.sort {|x,y| x.value.to_s <=> y.value.to_s }, :spec
+  if @contexts
+    @contexts.each {|context| serialize(context) }
+    generate_full_list @contexts.sort {|x,y| x.value.to_s <=> y.value.to_s }, :spec
   end
   
 end

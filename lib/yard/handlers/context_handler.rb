@@ -24,9 +24,24 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
     end
     
     log.info "Creating Context with owner #{context_owner.class}"
-    obj = YARD::CodeObjects::RSpec::Context.new(context_owner,objname)
     
-    log.info "Owner now has a context child #{context_owner.children.find_all{|s| s.is_a?(YARD::CodeObjects::RSpec::Context) }}"
+    #
+    # When a context is nested in a context, we want to attach that context as
+    # a child of the current context. Othwerwise, we want to add it as a top-level
+    # context in the Rspec Namespace
+    #
+    if context_owner.is_a?(YARD::CodeObjects::RSpec::Context)
+      obj = YARD::CodeObjects::RSpec::Context.new(context_owner,objname) do |context|
+        context.value = objname
+        context.owner = context_owner
+      end
+    else
+      obj = YARD::CodeObjects::RSpec::Context.new(YARD::CodeObjects::RSpec::RSPEC_NAMESPACE,objname) do |context|
+        context.value = objname
+        context.owner = context_owner
+      end
+    end
+    
     
     parse_block(statement.last.last, owner: obj)
   rescue YARD::Handlers::NamespaceMissingError

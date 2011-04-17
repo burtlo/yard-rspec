@@ -4,7 +4,7 @@ module YARD::CodeObjects
     
     class Context < NamespaceObject
     
-      attr_accessor :value, :specifications
+      attr_accessor :value, :specifications, :owner
     
       def initialize(namespace,name)
         @specifications = []

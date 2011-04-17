@@ -1,0 +1,11 @@
+<li>
+  <%= linkify YARD::CodeObjects::RSpec::RSPEC_NAMESPACE, "All Specs" %>
+</li>
+<% n = 1 %>
+
+<% @items.each do |spec| %>
+  <li class="r<%= n %>">
+    <%= linkify spec, spec.value %>
+  </li>
+  <% n = n == 2 ? 1 : 2 %>
+<% end %>
