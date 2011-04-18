@@ -10,3 +10,11 @@ end
 def describe
   erb(:describe)
 end
+
+def context
+  @context
+end
+
+def specification
+  @specification
+end
