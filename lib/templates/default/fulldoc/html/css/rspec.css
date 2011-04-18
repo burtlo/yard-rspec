@@ -17,9 +17,9 @@
 .context-specification { }
 
 .specification { padding: 5px; font-size: 14px; font-weight: bold;  }
-
+ .method_details_list { margin: 10px 0px 10px 5px; }
 .specification .predicate { color: #5D5C5B; }
 
 .odd { background-color: #F0F6F9; }
 .even { background-color: #FFFFFF; }
-.selected {	background-color: #FFCC80; }
+.selected { background-color: #FFCC80; }

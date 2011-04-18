@@ -1,12 +1,37 @@
 <div>
-  <div class="specification">
+  <div class="specification <%= row %>">
     <span class="predicate">it</span>
     <%= specification.value %>
   </div>
-  
-  <div class="meta">
-    <div class="file developer"><%= h specification.file %>:<%= specification.line %></div>
-    <div style="clear: right;"></div>
+
+  <div class="details">
+
+    <!-- Meta Information -->
+    <div class="meta">
+      <div class="file developer"><%= h specification.file %>:<%= specification.line %></div>
+      <div style="clear: right;"></div>
+    </div>
+
+    <!-- Source Code -->
+    <!-- <div class="method_details_list"> -->
+    <div>
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines"><%= "" %><%= h format_lines(specification) %></pre>
+          </td>
+          <td>
+            <pre class="code"><%= "" %><%= html_syntax_highlight specification.source %></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
   </div>
-  <!-- <div><%= specification.source %></div> -->
+  
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
 </div>

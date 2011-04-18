@@ -18,3 +18,11 @@ end
 def specification
   @specification
 end
+
+#
+# Tracks the current row to ensure that we are always alternating between even
+# and odd row templates.
+#
+def row
+  @row
+end
