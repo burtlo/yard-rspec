@@ -1,12 +1,13 @@
 <div class='context'>
   <div class='title'>
-    <%= h context.value %>
+    <span style="float:left;"><%= h context.value %></span>
+    <div class="meta">
+      <div class="file"><%= h context.file %>:<%= context.line %></div>
+    </div>
   </div>
   
-  <div class="meta">
-    <div class="file developer"><%= h context.file %>:<%= context.line %></div>
-    <div style="clear: right;"></div>
-  </div>
+  <div style="clear: both;"></div>
+  
   
   <% @row = 'odd' %>
   

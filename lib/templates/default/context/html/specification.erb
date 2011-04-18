@@ -5,16 +5,9 @@
   </div>
 
   <div class="details">
-
-    <!-- Meta Information -->
-    <div class="meta">
-      <div class="file developer"><%= h specification.file %>:<%= specification.line %></div>
-      <div style="clear: right;"></div>
-    </div>
-
     <!-- Source Code -->
     <!-- <div class="method_details_list"> -->
-    <div>
+    <div style="float: left;">
       <table class="source_code">
         <tr>
           <td>
@@ -25,8 +18,16 @@
           </td>
         </tr>
       </table>
+      
+    </div>
+    
+    <!-- Meta Information -->
+    <div class="meta">
+      <div class="file" style="margin-top: 5px;"><%= h specification.file %>:<%= specification.line %></div>
     </div>
 
+    <div style="clear: both;"></div>
+    
   </div>
   
   
