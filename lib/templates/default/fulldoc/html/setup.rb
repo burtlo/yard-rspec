@@ -4,6 +4,8 @@ def init
   # Additional javascript that power the additional menus, collapsing, etc.
   asset("js/rspec.js",file("js/rspec.js",true))
   
+  asset("css/rspec.css",file("css/rspec.css",true))
+  
   # Generates the specs splash page with the 'specs' template
   serialize(YARD::CodeObjects::RSpec::RSPEC_NAMESPACE)
   

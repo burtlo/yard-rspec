@@ -1,0 +1,23 @@
+
+.context .title { padding: 10px; font-size: 24px; margin: 20px 0px 10px 20px; padding-left: 0px; border-bottom: 1px solid #E3E3E3; }
+
+.context ul { list-style: none; padding-left: 20px; }
+ 
+.context-subcontext .title {
+    font-size: 1.1em; font-weight: normal; font-family: Monaco, Consolas, Courier, monospace;
+    font-weight: bold;
+    color: #3F3F3F;
+    padding: 6px 10px; margin-top: 18px;
+    background: #e5e8ff; border: 1px solid #d8d8e5; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+}
+
+.context-specifications { }
+.context-specification { }
+
+.specification { padding: 5px; font-size: 14px; font-weight: bold;  }
+
+.specification .predicate { color: #5D5C5B; }
+
+.odd { background-color: #F0F6F9; }
+.even { background-color: #FFFFFF; }
+.selected {	background-color: #FFCC80; }

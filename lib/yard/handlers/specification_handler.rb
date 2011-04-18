@@ -9,6 +9,7 @@ class RSpecSpecificationHandler < YARD::Handlers::Ruby::Base
     
     if owner.is_a?(YARD::CodeObjects::RSpec::Context)
       owner.specifications << YARD::CodeObjects::RSpec::Specification.new(owner,name) do |spec|
+        spec.value = name
         spec.source = statement.last.last.source.chomp
         spec.file = statement.file
         spec.line = statement.line

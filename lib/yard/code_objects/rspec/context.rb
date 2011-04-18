@@ -11,6 +11,10 @@ module YARD::CodeObjects
         super(namespace,name)
       end
       
+      def subcontexts
+        children.find_all {|child| child.is_a?(Context) }
+      end
+      
     end
     
   end

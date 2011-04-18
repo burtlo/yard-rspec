@@ -32,3 +32,9 @@ describe String do
     subject.should eq("") 
   end
 end
+
+describe Fixnum do
+  it "should be equal to 0" do
+    subject.should eq(0)
+  end
+end

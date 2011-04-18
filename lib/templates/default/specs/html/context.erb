@@ -1,0 +1,24 @@
+<div class='context'>
+  <div class='title'><%= h context.value %></div>
+  <% row = 'odd' %>
+  
+  <ul class='context-specifications'>
+    <% context.specifications.each do |it| %>
+      <% @specification = it %>
+      <li class='context-specification <%= row %>'><%= erb(:specification) %></li>
+      
+      <% row = (row == 'odd' ? 'even' : 'odd') %>
+    <% end %>
+  </ul>
+  
+  <ul class='context-subcontext'>
+  <% context.subcontexts.each do |subcontext| %>
+    <% @context = subcontext %>
+    
+    <li class='<%= row %>'><%= erb :context %></li>
+    
+    <% @context = subcontext.owner %>
+    <% row = (row == 'odd' ? 'even' : 'odd') %>
+  <% end %>
+  </ul>
+</div>
