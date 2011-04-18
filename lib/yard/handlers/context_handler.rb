@@ -25,6 +25,7 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
     
     log.info "Creating Context with owner #{context_owner.class}"
     
+    
     #
     # When a context is nested in a context, we want to attach that context as
     # a child of the current context. Othwerwise, we want to add it as a top-level
@@ -34,11 +35,13 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
       obj = YARD::CodeObjects::RSpec::Context.new(context_owner,objname) do |context|
         context.value = objname
         context.owner = context_owner
+        context.add_file(statement.file,statement.line)
       end
     else
       obj = YARD::CodeObjects::RSpec::Context.new(YARD::CodeObjects::RSpec::RSPEC_NAMESPACE,objname) do |context|
         context.value = objname
         context.owner = context_owner
+        context.add_file(statement.file,statement.line)
       end
     end
     

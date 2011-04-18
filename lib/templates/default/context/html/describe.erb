@@ -1,5 +1,13 @@
 <div class='context'>
-  <div class='title'><%= h context.value %></div>
+  <div class='title'>
+    <%= h context.value %>
+  </div>
+  
+  <div class="meta">
+    <div class="file developer"><%= h context.file %>:<%= context.line %></div>
+    <div style="clear: right;"></div>
+  </div>
+  
   <% row = 'odd' %>
   
   <ul class='context-specifications'>

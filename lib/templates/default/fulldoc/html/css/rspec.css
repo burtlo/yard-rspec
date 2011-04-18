@@ -1,6 +1,8 @@
 
 .context .title { padding: 10px; font-size: 24px; margin: 20px 0px 10px 20px; padding-left: 0px; border-bottom: 1px solid #E3E3E3; }
 
+.context .meta .file { color: gray; float: right; margin-right: 20px; }
+
 .context ul { list-style: none; padding-left: 20px; }
  
 .context-subcontext .title {

@@ -11,8 +11,7 @@ class RSpecSpecificationHandler < YARD::Handlers::Ruby::Base
       owner.specifications << YARD::CodeObjects::RSpec::Specification.new(owner,name) do |spec|
         spec.value = name
         spec.source = statement.last.last.source.chomp
-        spec.file = statement.file
-        spec.line = statement.line
+        spec.add_file(statement.file,statement.line)
       end
       
     end
