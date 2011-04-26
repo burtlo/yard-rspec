@@ -8,7 +8,6 @@
   
   <div style="clear: both;"></div>
   
-  
   <% @row = 'odd' %>
   
   <ul class='context-specifications'>
@@ -30,4 +29,10 @@
     <% @row = (@row == 'odd' ? 'even' : 'odd') %>
   <% end %>
   </ul>
+
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+  
 </div>

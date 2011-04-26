@@ -1,12 +1,12 @@
-<div>
-  <div class="specification <%= row %>">
+<div class="specification">
+  <div class="heading <%= row %>">
     <span class="predicate">it</span>
     <%= specification.value %>
   </div>
 
   <div class="details">
+    
     <!-- Source Code -->
-    <!-- <div class="method_details_list"> -->
     <div style="float: left;">
       <table class="source_code">
         <tr>
@@ -18,7 +18,6 @@
           </td>
         </tr>
       </table>
-      
     </div>
     
     <!-- Meta Information -->
@@ -29,8 +28,8 @@
     <div style="clear: both;"></div>
     
   </div>
-  
-  
+
+  <!-- Captures the collapsed state -->
   <div class="attributes" style="display:none;">
     <input type="hidden" name="collapsed" value="false">
   </div>

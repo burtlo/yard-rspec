@@ -6,6 +6,9 @@
     border-bottom: 1px solid #E3E3E3;
     height: 25px;
 }
+.context .title span {
+    cursor: pointer;
+}
 
 .context .meta .file { color: gray; float: right; margin-right: 10px; }
 
@@ -25,9 +28,11 @@
 .context-specifications { }
 .context-specification { padding: 4px; }
 
-.specification { padding: 5px; font-size: 14px; font-weight: bold;  }
- .method_details_list { margin: 10px 0px 10px 5px; }
-.specification .predicate { color: #5D5C5B; }
+
+.specification .heading { padding: 5px; font-size: 14px; font-weight: bold; cursor: pointer; }
+.specification .heading .predicate { color: #5D5C5B; }
+
+.method_details_list { margin: 10px 0px 10px 5px; }
 
 .odd { background-color: #F0F6F9; }
 .even { background-color: #FFFFFF; }
