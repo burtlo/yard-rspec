@@ -1,0 +1,11 @@
+=== 0.0.1 / 2011-04-26
+
+* RSpec files are found, parsed, and included in the documentation
+
+* Top-level 'describe' with the name of a class or method will link to source
+  code class
+
+* First child 'context' or 'describe' that has a parent linked to a class, 
+  with the name of a method, prefixed with a pound symbol (e.g. #to_s ) will 
+  be matched to code class method
+  
