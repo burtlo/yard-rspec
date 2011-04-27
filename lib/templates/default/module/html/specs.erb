@@ -2,16 +2,13 @@
 <div class="method_details_list">
 <div class="tags">
   <h3>Specifications:</h3>
-   <% contexts.each do |context| %>
-     <% log.info "Displaying the Context Info #{options}" %>
-     <% old_object = options[:object] 
-     options[:object] = context
-     
-     
-     %>
-     <% T('context') %>
-     <% options[:object] = old_object %>
+   <ul>
+    <% contexts.each do |context| %>
+     <% context.specifications.each do |spec| %>
+     <li><%= spec.value %></li>
+     <% end %>
    <% end %>
+   </ul>
 </div>
 </div>
 <% end %>
