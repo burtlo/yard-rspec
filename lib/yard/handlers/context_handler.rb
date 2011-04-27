@@ -46,6 +46,18 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
       # repository of items to find if an object exists with the same name
       context_belongs_to_object = P(name).is_a?(Proxy) ?  nil : P(name)
       
+      if context_belongs_to_object
+        context_belongs_to_object = [context_belongs_to_object] unless context_belongs_to_object.is_a?(Enumerable)
+        
+        context_belongs_to_object.each do |parent_object|
+          # when it does not exist then we want to add the context to the parent object
+          log.info "Class: [#{parent_object.name}] assigned the context #{name}"
+          (parent_object[:specifications] ||= []) << context_object
+          parent_object.paired_to_code_object = parent_object
+        end
+        
+      end
+      
     else
       
       # When composed within a context, ask that owner for the name of it's
@@ -62,14 +74,14 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
         
         parent_context_belongs_to_object.each do |parent_object|
         
-          log.info "Parent Context belongs to object #{parent_object.name}"
+          #log.info "Parent Context belongs to object #{parent_object.name}"
           context_belongs_to_method = parent_object.children.find_all {|child| child.is_a?(MethodObject) }.find {|method| method.name == Regexp.last_match(1).to_sym }
         
           # We want to add a reference of the context to the method if one exists
           if context_belongs_to_method
-            log.info "Method: #{name} assigned to context [#{context_belongs_to_method.name}]"
+            log.info "Method: [#{context_belongs_to_method.parent.name}##{context_belongs_to_method.name}] assigned the context #{name}"
             (context_belongs_to_method[:specifications] ||= []) << context_object
-            context_object.method = context_belongs_to_method
+            context_object.paired_to_code_object = context_belongs_to_method
           end
           
         end

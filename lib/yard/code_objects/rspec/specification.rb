@@ -4,7 +4,7 @@ module YARD::CodeObjects
     
     class Specification < Base
     
-      attr_accessor :value, :source, :method
+      attr_accessor :value, :source
     
       def initialize(namespace,name)
         super(namespace,name)

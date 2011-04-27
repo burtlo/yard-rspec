@@ -4,7 +4,7 @@ module YARD::CodeObjects
     
     class Context < NamespaceObject
     
-      attr_accessor :value, :specifications, :owner
+      attr_accessor :value, :specifications, :owner, :paired_to_code_object
     
       def initialize(namespace,name)
         @specifications = []
@@ -14,6 +14,7 @@ module YARD::CodeObjects
       def subcontexts
         children.find_all {|child| child.is_a?(Context) }
       end
+      
       
     end
     

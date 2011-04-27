@@ -5,7 +5,7 @@ class RSpecSpecificationHandler < YARD::Handlers::Ruby::Base
   def process
     # TODO: concerned about the same named specifications
     name = statement.parameters.first.jump(:string_content).source
-    log.info "Creating It with name #{name}"
+    #log.info "Creating It with name #{name}"
     
     if owner.is_a?(YARD::CodeObjects::RSpec::Context)
       owner.specifications << YARD::CodeObjects::RSpec::Specification.new(owner,name) do |spec|
