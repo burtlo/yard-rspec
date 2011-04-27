@@ -5,7 +5,7 @@
   <ul>
   <% contexts.each do |context| %>
    <% context.specifications.each do |spec| %>
-   <li><%= linkify spec, spec.value %></li>
+   <li><%= link_to_full_specification context, spec %></li>
    <% end %>
  <% end %>
  </ul>

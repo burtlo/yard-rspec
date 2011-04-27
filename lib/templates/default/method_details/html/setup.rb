@@ -14,5 +14,5 @@ def link_to_full_specification(spec)
     context = context.parent
   end
   
-  linkify context, spec.value
+  %{<a href='#{url_for(context,spec.unique_id)}'>#{h(spec.value)}}
 end
