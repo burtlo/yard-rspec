@@ -10,6 +10,9 @@ module YARD::CodeObjects
         super(namespace,name)
       end
       
+      def unique_id
+        "#{file}-#{line}".gsub(/\W/,'-')
+      end
       
     end
     

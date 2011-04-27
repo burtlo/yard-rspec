@@ -15,6 +15,9 @@ module YARD::CodeObjects
         children.find_all {|child| child.is_a?(Context) }
       end
       
+      def unique_id
+        "#{file}-#{line}".gsub(/\W/,'-')
+      end
       
     end
     
