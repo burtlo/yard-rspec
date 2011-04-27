@@ -4,11 +4,11 @@
   <h3>Specifications:</h3>
   <ul>
   <% contexts.each do |context| %>
-    <% context.specifications.each do |spec| %>
-    <li><%= spec.value %></li>
-    <% end %>
-  <% end %>
-  </ul>
+   <% context.specifications.each do |spec| %>
+   <li><%= link_to_full_specification spec %></li>
+   <% end %>
+ <% end %>
+ </ul>
 </div>
 </div>
 <% end %>

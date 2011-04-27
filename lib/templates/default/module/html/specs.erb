@@ -2,13 +2,13 @@
 <div class="method_details_list">
 <div class="tags">
   <h3>Specifications:</h3>
-   <ul>
-    <% contexts.each do |context| %>
-     <% context.specifications.each do |spec| %>
-     <li><%= spec.value %></li>
-     <% end %>
+  <ul>
+  <% contexts.each do |context| %>
+   <% context.specifications.each do |spec| %>
+   <li><%= linkify spec, spec.value %></li>
    <% end %>
-   </ul>
+ <% end %>
+ </ul>
 </div>
 </div>
 <% end %>
