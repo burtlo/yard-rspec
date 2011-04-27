@@ -5,8 +5,6 @@
     font-size: 24px; 
     border-bottom: 1px solid #E3E3E3;
     height: 25px;
-}
-.context .title span {
     cursor: pointer;
 }
 
