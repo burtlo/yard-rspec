@@ -48,12 +48,14 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
       
       if context_belongs_to_object
         context_belongs_to_object = [context_belongs_to_object] unless context_belongs_to_object.is_a?(Enumerable)
+ 
         
         context_belongs_to_object.each do |parent_object|
           # when it does not exist then we want to add the context to the parent object
           log.info "Class: [#{parent_object.name}] assigned the context #{name}"
           (parent_object[:specifications] ||= []) << context_object
-          parent_object.paired_to_code_object = parent_object
+          context_object.paired_to_code_object = parent_object
+          
         end
         
       end
