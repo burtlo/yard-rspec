@@ -12,7 +12,9 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
     #
     name = statement.parameters.first.jump(:string_content).source
 
-    log.info "Creating Context for text: #{name}"
+    name = "EMPTY STRING" if name.nil? || name == ""
+
+    log.debug "Creating Context for text: #{name}"
     
     #
     # If we are currently at root then we consider this a top level
@@ -52,7 +54,7 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
         
         context_belongs_to_object.each do |parent_object|
           # when it does not exist then we want to add the context to the parent object
-          log.info "Class: [#{parent_object.name}] assigned the context #{name}"
+          log.debug "Class: [#{parent_object.name}] assigned the context #{name}"
           (parent_object[:specifications] ||= []) << context_object
           context_object.paired_to_code_object = parent_object
           
@@ -82,7 +84,7 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
           # We want to add a reference of the context to the method if one exists
           if context_belongs_to_method
             
-            log.info "Method: [#{context_belongs_to_method.parent.name}##{context_belongs_to_method.name}] assigned the context #{name}"
+            log.debug "Method: [#{context_belongs_to_method.parent.name}##{context_belongs_to_method.name}] assigned the context #{name}"
             (context_belongs_to_method[:specifications] ||= []) << context_object
             context_object.paired_to_code_object = context_belongs_to_method
 
