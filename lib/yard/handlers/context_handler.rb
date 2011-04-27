@@ -79,9 +79,11 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
         
           # We want to add a reference of the context to the method if one exists
           if context_belongs_to_method
+            
             log.info "Method: [#{context_belongs_to_method.parent.name}##{context_belongs_to_method.name}] assigned the context #{name}"
             (context_belongs_to_method[:specifications] ||= []) << context_object
             context_object.paired_to_code_object = context_belongs_to_method
+
           end
           
         end

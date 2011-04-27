@@ -5,5 +5,5 @@ end
 
 def contexts
   log.debug "method_details - Finding Contexts"
-  @contexts ||= object[:specifications]
+  @contexts ||= object[:specifications].uniq
 end
