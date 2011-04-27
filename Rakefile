@@ -9,4 +9,5 @@ end
 
 task :gendoc => :clean do
   `yardoc -e ./lib/yard-rspec.rb 'example/**/*' --debug`
+  #`open doc/index.html`
 end

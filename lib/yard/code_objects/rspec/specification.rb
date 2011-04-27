@@ -4,11 +4,12 @@ module YARD::CodeObjects
     
     class Specification < Base
     
-      attr_accessor :value, :source
+      attr_accessor :value, :source, :method
     
       def initialize(namespace,name)
         super(namespace,name)
       end
+      
       
     end
     
