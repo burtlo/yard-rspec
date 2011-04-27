@@ -12,5 +12,5 @@ def contexts
 end
 
 def link_to_full_specification(context,spec)
-  %{<a href='#{url_for(context,spec.unique_id)}'>#{h(spec.value)}}
+  %{<a href='#{url_for(context,spec.unique_id)}'>#{h(spec.value)}</a>}
 end
