@@ -5,7 +5,29 @@
   <ul>
   <% contexts.each do |context| %>
    <% context.specifications.each do |spec| %>
-   <li><%= link_to_full_specification context, spec %></li>
+     <li>
+       <%= spec.value %>
+     </li>
+     <div class="details">
+
+       <!-- Source Code -->
+       <div style="float: left;">
+         <table class="source_code">
+           <tr>
+             <td>
+               <pre class="lines"><%= "" %><%= h format_lines(spec) %></pre>
+             </td>
+             <td>
+               <pre class="code"><%= "" %><%= html_syntax_highlight spec.source %></pre>
+             </td>
+           </tr>
+         </table>
+       </div>
+
+       <div style="clear: both;"></div>
+
+     </div>
+     
    <% end %>
  <% end %>
  </ul>
