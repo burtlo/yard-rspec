@@ -1,0 +1,30 @@
+
+String
+  #pig_latin
+    should be a pig!
+    should fail to be a pig! (FAILED - 1)
+  #pig_latin
+    should be a pig (within a context)
+
+String
+  should be empty
+
+Fixnum
+  should be equal to 0 (FAILED - 2)
+
+Failures:
+
+  1) String#pig_latin should fail to be a pig!
+     Failure/Error: "hello".pig_latin.should == "hello"
+       expected: "hello"
+            got: "ellohay" (using ==)
+     # ./example/first_example.rb:18:in `block (3 levels) in <top (required)>'
+
+  2) Fixnum should be equal to 0
+     Failure/Error: subject.should eq(0)
+     NoMethodError:
+       undefined method `new' for Fixnum:Class
+     # ./example/first_example.rb:38:in `block (2 levels) in <top (required)>'
+
+Finished in 0.0014 seconds
+5 examples, 2 failures

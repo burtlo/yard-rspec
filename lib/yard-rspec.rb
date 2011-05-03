@@ -17,6 +17,8 @@ end
 require File.dirname(__FILE__) + "/yard/handlers/legacy/describe_handler"
 require File.dirname(__FILE__) + "/yard/handlers/legacy/it_handler"
 
+require File.dirname(__FILE__) + "/yard/parser/rspec/documentation_parser"
+
 
 # This registered template works for yardoc
 YARD::Templates::Engine.register_template_path File.dirname(__FILE__) + '/templates'
