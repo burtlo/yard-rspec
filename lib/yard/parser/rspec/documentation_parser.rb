@@ -129,6 +129,7 @@ module YARD::Parser::RSpec
           # that this one is a specification
           # 
           
+          result_obj.parent = @lines.last
           @lines.last.type = :context
           result_obj.type = :specification
           
@@ -169,12 +170,39 @@ module YARD::Parser::RSpec
         !!(line =~ /^$/)
       end
 
+      #
+      # When a result object is saved we are really interested in the failures
+      # as we can make an assumption that all the others have passed. We woulld
+      # want to tie the failures here with the failures below
+      # 
       def save
-        @lines
+        
+        @lines.each do |line|
+          if line.failure
+            YARD::CodeObjects::RSpec::Failure.new(YARD::CodeObjects::RSpec::RSPEC_NAMESPACE,line.failure) do |failure|
+              failure.parents = []
+              #
+              # The failure is going to be given a name that is the index of the failure
+              # and now we need to find the adjoining context
+              #
+              parent = line.parent
+              
+              # Add all of the parents to the failure, in the order from top down
+              until parent.nil?
+                failure.parents.unshift parent.value
+                parent = parent.parent
+              end
+              
+            end
+          end
+        end
+        
       end
       
       class ResultObject
-        attr_accessor :value, :type, :failure
+        # I do not need the value or type
+        # when I am only concerned with the failure and the parent
+        attr_accessor :value, :type, :failure, :parent
       end
 
     end
@@ -209,8 +237,18 @@ module YARD::Parser::RSpec
         !!(line =~/^$/)
       end
 
+      #
+      # When saving a failure, we need to find the failure in the Registry
       def save
-        self
+        failure = YARD::Registry.all(:failure).find {|failure| failure.name.to_s == @index }
+        
+        if failure
+          failure.message = @message
+          failure
+        else
+          nil
+        end
+        
       end
       
     end

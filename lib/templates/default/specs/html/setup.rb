@@ -7,7 +7,7 @@ def init
 end
 
 def contexts
-  @contexts = YARD::CodeObjects::RSpec::RSPEC_NAMESPACE.children
+  @contexts = YARD::CodeObjects::RSpec::RSPEC_NAMESPACE.children.find_all {|child| child.is_a? YARD::CodeObjects::RSpec::Context }
   erb(:contexts)
 end
 
