@@ -29,6 +29,8 @@
 
 .specification .heading { padding: 5px; font-size: 14px; font-weight: bold; cursor: pointer; }
 .specification .heading .predicate { color: #5D5C5B; }
+.failed { color: #800000; font-weight: bold; }
+
 
 .method_details_list { margin: 10px 0px 10px 5px; }
 

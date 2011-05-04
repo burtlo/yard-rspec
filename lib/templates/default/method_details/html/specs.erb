@@ -7,10 +7,10 @@
     <% context.specifications.each do |spec| %>
       <li>
        <span class="predicate">it</span>
-       <%= spec.value %>
-       <% if failure(spec) %>
-         (FAILED - <%= failure(spec).name %>)
-       <% end %>
+       <span class="<%= 'failed' if failure(spec) %>">
+         <%= spec.value %>
+         <%= "(FAILED - #{failure(spec).name})" if failure(spec) %>
+       </span>
       
       </li>
       <div class="details">
@@ -20,6 +20,7 @@
           <table class="source_code">
             <tr>
               <td>
+                
                 <pre class="lines"><%= "" %><%= h format_lines(spec) %></pre>
               </td>
               <td>
