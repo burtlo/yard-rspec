@@ -243,6 +243,7 @@ module YARD::Parser::RSpec
         failure = YARD::Registry.all(:failure).find {|failure| failure.name.to_s == @index }
         
         if failure
+          failure.value = @value
           failure.message = @message
           failure
         else

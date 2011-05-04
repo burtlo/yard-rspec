@@ -3,6 +3,10 @@
     <a name="<%= specification.unique_id %>"></a>
     <span class="predicate">it</span>
     <%= specification.value %>
+    <% if failure(specification) %>
+      (FAILED - <%= failure(specification).name %>)
+    <% end %>
+    
   </div>
 
   <div class="details">
@@ -25,7 +29,7 @@
     <div class="meta">
       <div class="file" style="margin-top: 5px;"><%= h specification.file %>:<%= specification.line %></div>
     </div>
-
+    
     <div style="clear: both;"></div>
     
   </div>
