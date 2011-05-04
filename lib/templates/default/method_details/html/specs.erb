@@ -30,7 +30,26 @@
         </div>
 
         <div style="clear: both;"></div>
+        
+        <% if failure(spec) %>
+        
+        <!-- Error Message -->
+        <div style="float: left;">
+          <table class="source_code">
+            <tr>
+              <td>
+                <pre class="lines"><%= "" %><%= h format_lines(failure(spec)) %></pre>
+              </td>
+              <td>
+                <pre class="code"><%= "" %><%= html_syntax_highlight failure(spec).message.join("\n") %></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
 
+        <div style="clear: both;"></div>
+        
+        <% end %>
       </div>
 
    <% end %>
