@@ -7,6 +7,10 @@
    <% context.specifications.each do |spec| %>
      <li>
        <%= spec.value %>
+       <% if failure(spec) %>
+         (FAILED - <%= failure(spec).name %>)
+       <% end %>
+       
      </li>
      <div class="details">
 

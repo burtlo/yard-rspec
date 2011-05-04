@@ -8,6 +8,10 @@
       <li>
        <span class="predicate">it</span>
        <%= spec.value %>
+       <% if failure(spec) %>
+         (FAILED - <%= failure(spec).name %>)
+       <% end %>
+      
       </li>
       <div class="details">
 
