@@ -8,12 +8,15 @@ end
 require File.dirname(__FILE__) + "/yard/code_objects/rspec/rspec"
 require File.dirname(__FILE__) + "/yard/code_objects/rspec/context"
 require File.dirname(__FILE__) + "/yard/code_objects/rspec/specification"
+require File.dirname(__FILE__) + "/yard/code_objects/rspec/shared_context"
+require File.dirname(__FILE__) + "/yard/code_objects/rspec/shared_examples"
 require File.dirname(__FILE__) + "/yard/code_objects/rspec/failure"
 
 if RUBY19
   require File.dirname(__FILE__) + "/yard/handlers/context_handler"
   require File.dirname(__FILE__) + "/yard/handlers/specification_handler"
   require File.dirname(__FILE__) + "/yard/handlers/shared_context_handler"
+  require File.dirname(__FILE__) + "/yard/handlers/shared_examples_handler"
 end
 
 #require File.dirname(__FILE__) + "/yard/handlers/legacy/describe_handler"

@@ -14,7 +14,7 @@ class RSpecContextHandler < YARD::Handlers::Ruby::Base
 
     name = "EMPTY STRING" if name.nil? || name == ""
 
-    log.debug "Creating Context for text: #{name}"
+    log.debug "Creating [Context]: #{name}"
     
     #
     # If we are currently at root then we consider this a top level

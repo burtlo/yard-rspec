@@ -20,7 +20,7 @@ class SharedContextHandler < YARD::Handlers::Ruby::Base
 
     name = "EMPTY STRING" if name.nil? || name == ""
 
-    log.debug "Creating Context for text: #{name}"
+    log.debug "Creating [Shared Context]: #{name}"
     
     #
     # All remaining parameters are metadata that could be matched as well. Look
