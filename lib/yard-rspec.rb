@@ -13,10 +13,11 @@ require File.dirname(__FILE__) + "/yard/code_objects/rspec/failure"
 if RUBY19
   require File.dirname(__FILE__) + "/yard/handlers/context_handler"
   require File.dirname(__FILE__) + "/yard/handlers/specification_handler"
+  require File.dirname(__FILE__) + "/yard/handlers/shared_context_handler"
 end
 
-require File.dirname(__FILE__) + "/yard/handlers/legacy/describe_handler"
-require File.dirname(__FILE__) + "/yard/handlers/legacy/it_handler"
+#require File.dirname(__FILE__) + "/yard/handlers/legacy/describe_handler"
+#require File.dirname(__FILE__) + "/yard/handlers/legacy/it_handler"
 
 require File.dirname(__FILE__) + "/yard/parser/rspec/documentation_parser"
 
