@@ -22,7 +22,7 @@ class ConfigurationHandler < YARD::Handlers::Ruby::Base
       owner = YARD::CodeObjects::RSpec::RSPEC_NAMESPACE
       
       config = YARD::CodeObjects::RSpec::Configuration.new(owner,"configuration") do |c|
-        c.value = "configuration"
+        c.value = statement.source
       end
       
       # Though configuration is like defined once, we should likely look for an
