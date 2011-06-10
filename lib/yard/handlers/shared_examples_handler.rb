@@ -34,7 +34,7 @@ class SharedExamplesHandler < YARD::Handlers::Ruby::Base
     #
     # Create the shared context object as a child of the Rspec Namespace
     #
-    shared_examples_object = YARD::CodeObjects::RSpec::Context.new(shared_examples_owner,name) do |examples|
+    shared_examples_object = YARD::CodeObjects::RSpec::SharedExample.new(shared_examples_owner,name) do |examples|
       examples.value = name
       examples.add_file(statement.file,statement.line)
     end
