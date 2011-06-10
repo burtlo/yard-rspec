@@ -6,7 +6,9 @@ class RSpecSpecificationHandler < YARD::Handlers::Ruby::Base
     # TODO: concerned about the same named specifications
     name = statement.parameters.first.jump(:string_content).source
     
-    if owner.is_a?(YARD::CodeObjects::RSpec::Context)
+    if owner.is_a?(YARD::CodeObjects::RSpec::Context) or
+       owner.is_a?(YARD::CodeObjects::RSpec::SharedExample)
+       
       owner.specifications << YARD::CodeObjects::RSpec::Specification.new(owner,name) do |spec|
         spec.value = name
         spec.source = statement.last.last.source.chomp

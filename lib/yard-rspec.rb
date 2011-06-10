@@ -19,6 +19,7 @@ if RUBY19
   require File.dirname(__FILE__) + "/yard/handlers/shared_context_handler"
   require File.dirname(__FILE__) + "/yard/handlers/configuration_handler"
   require File.dirname(__FILE__) + "/yard/handlers/shared_examples_handler"
+  require File.dirname(__FILE__) + "/yard/handlers/behaves_like_handler"
 end
 
 #require File.dirname(__FILE__) + "/yard/handlers/legacy/describe_handler"

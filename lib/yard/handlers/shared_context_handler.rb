@@ -22,7 +22,7 @@ class SharedContextHandler < YARD::Handlers::Ruby::Base
 
     log.debug "Creating [Shared Context]: #{name}"
     
-    #
+    # 
     # All remaining parameters are metadata that could be matched as well. Look
     # at each of the parameters until you come to a parameter that solely reports
     # false.

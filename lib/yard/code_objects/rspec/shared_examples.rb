@@ -4,12 +4,14 @@ module YARD::CodeObjects
     
     class SharedExample < NamespaceObject
     
-      attr_accessor :name, :value, :contexts
+      attr_accessor :name, :value
     
       def initialize(namespace,name)
-        @contexts = []
         super(namespace,name)
       end
+      
+      # TODO: specifications
+      # TODO: contexts
 
       def unique_id
         "#{file}-#{line}".gsub(/\W/,'-')
