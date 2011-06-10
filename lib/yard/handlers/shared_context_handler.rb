@@ -44,7 +44,7 @@ class SharedContextHandler < YARD::Handlers::Ruby::Base
     #
     # Create the shared context object as a child of the Rspec Namespace
     #
-    shared_context_object = YARD::CodeObjects::RSpec::Context.new(shared_context_owner,name) do |context|
+    shared_context_object = YARD::CodeObjects::RSpec::SharedContext.new(shared_context_owner,name) do |context|
       context.value = name
       context.add_file(statement.file,statement.line)
       context.metadata = metadata
