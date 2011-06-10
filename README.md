@@ -3,7 +3,14 @@ YARD-RSpec: A YARD extension for RSpec 2
 
 NOTE: This extension is currently under development. At the current moment,
 the plugin is not particularly useful for any individual. Please feel free to 
-include it through Bundler until it is ready
+clone and take a look around.
+
+Currently the project is still in requirements gathering phase. The work up
+to this point has been finding and parsing the various components one finds
+in an RSpec file and convert them to YARD code objects.
+
+I would love ideas, thoughts, and mock ups of visualization and presentation of
+the data and how you would be see the gem serving you.
 
 
 Synopsis
@@ -17,6 +24,7 @@ modules, and methods that they currently test.
 YARD-Rspec takes the work started by [@lsegal](https://github.com/lsegal/yard-spec-plugin)
 and expands on it to include some small things (e.g. `context` keyword) and
 larger things like the full view of the specification file.
+
 
 Examples
 --------
